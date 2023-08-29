@@ -6,10 +6,10 @@ import java.time.format.DateTimeFormatter;
 public class Relogio {
 
     public String difTime(String horario1, String horario2) {
+        LocalTime localTime1, localTime2;
+        localTime1 = stringParaLocalTime(horario1);
+        localTime2 = stringParaLocalTime(horario2);
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        LocalTime localTime1 = LocalTime.parse(horario1,formatter);
-        LocalTime localTime2 = LocalTime.parse(horario2,formatter);
         Duration duracao = Duration.between(localTime1, localTime2);
 
         long totalSegundos = duracao.getSeconds();
@@ -19,4 +19,13 @@ public class Relogio {
 
        return String.format("%02d:%02d:%02d", horas, minutos, segundos);
     }
+
+    public LocalTime stringParaLocalTime (String horario) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalTime localTime = LocalTime.parse(horario,formatter);
+        return localTime;
+    }
+
+
+
 }
