@@ -61,6 +61,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "L:/repositories/TDD-java-relogio/src/main/java/org/example/Main.java",
     "vue.rearranger.settings.migration": "true"
   }
@@ -78,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693281419458</updated>
-      <workItem from="1693281419760" duration="847000" />
+      <workItem from="1693281419760" duration="1259000" />
     </task>
     <servers />
   </component>
