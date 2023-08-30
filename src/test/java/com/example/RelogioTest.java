@@ -50,6 +50,16 @@ public class RelogioTest {
         assertEquals(horaAtual.format(formatoEsperado),relogio.formato24H());
     }
 
+    @Test
+    @DisplayName("Validar o método formatoAMPM")
+    public void testFormatoAMPM() {
+        Relogio relogio = new Relogio();
+        LocalTime horaAtual = LocalTime.now();
+        DateTimeFormatter formatoEsperado = DateTimeFormatter.ofPattern("hh:mm:ss a");
+        relogio.atualizar();
+        assertEquals(horaAtual.format(formatoEsperado),relogio.formatoAMPM());
+    }
+
 
 
 
