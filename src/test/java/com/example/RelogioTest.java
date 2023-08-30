@@ -60,7 +60,16 @@ public class RelogioTest {
         assertEquals(horaAtual.format(formatoEsperado),relogio.formatoAMPM());
     }
 
-
+    @Test
+    @DisplayName("Validar o método reiniciar")
+    public void testReiniciar() {
+        Relogio relogio = new Relogio();
+        relogio.atualizar();
+        relogio.reiniciar();
+        assertEquals(0,relogio.getHora());
+        assertEquals(0,relogio.getMinuto());
+        assertEquals(0,relogio.getSegundo());
+    }
 
 
 }
