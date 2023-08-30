@@ -32,10 +32,16 @@ public class Relogio {
         this.segundo = segundo;
     }
 
+
+    public String formato24H() {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm:ss");
+        return String.format("%02d:%02d:%02d",this.getHora(),this.getMinuto(),this.getSegundo());
+    }
+
     public void atualizar() {
         LocalTime horaAtual = LocalTime.now();
 
-        this.setHora(Integer.valueOf(horaAtual.getHour()););
+        this.setHora(Integer.valueOf(horaAtual.getHour()));
         this.setMinuto(Integer.valueOf(horaAtual.getMinute()));
         this.setSegundo(Integer.valueOf(horaAtual.getSecond()));
     }
