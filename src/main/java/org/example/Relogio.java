@@ -34,6 +34,9 @@ public class Relogio {
 
 
     public void reiniciar() {
+        if(this.getHora() == 0 && this.getMinuto() == 0 && this.getSegundo() == 0){
+            throw new RuntimeException("O relógio já está marcado para meia noite");
+        }
         this.setHora(0);
         this.setMinuto(0);
         this.setSegundo(0);

@@ -71,6 +71,24 @@ public class RelogioTest {
         assertEquals(0,relogio.getSegundo());
     }
 
+    @Test
+    @DisplayName("Validar exceção ao reiniciar o relógio para meia noite")
+    public void testReiniciarException() {
+        Relogio relogio = new Relogio();
+        relogio.setHora(0);
+        relogio.setMinuto(0);
+        relogio.setSegundo(0);
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            relogio.reiniciar();
+        });
+
+        String mensagemEsperada = "O relógio já está marcado para meia noite";
+        String mensagemObtida = exception.getMessage();
+
+        assertEquals(mensagemEsperada,mensagemObtida);
+    }
+
+
 
 }
 
