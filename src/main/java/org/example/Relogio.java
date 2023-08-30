@@ -37,6 +37,12 @@ public class Relogio {
         return String.format("%02d:%02d:%02d",this.getHora(),this.getMinuto(),this.getSegundo());
     }
 
+    public String formatoAMPM() {
+        LocalTime localTime = LocalTime.of(this.getHora(),this.getMinuto(),this.getSegundo());
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm:ss a");
+        return localTime.format(formato);
+    }
+
     public void atualizar() {
         LocalTime horaAtual = LocalTime.now();
 

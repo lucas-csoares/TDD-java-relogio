@@ -55,7 +55,7 @@ public class RelogioTest {
     public void testFormatoAMPM() {
         Relogio relogio = new Relogio();
         LocalTime horaAtual = LocalTime.now();
-        DateTimeFormatter formatoEsperado = DateTimeFormatter.ofPattern("hh:mm:ss a");
+        DateTimeFormatter formatoEsperado = DateTimeFormatter.ofPattern("HH:mm:ss a");
         relogio.atualizar();
         assertEquals(horaAtual.format(formatoEsperado),relogio.formatoAMPM());
     }
