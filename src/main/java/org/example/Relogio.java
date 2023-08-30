@@ -8,6 +8,42 @@ public class Relogio {
     private Integer minuto;
     private Integer segundo;
 
+    public Integer getHora() {
+        return hora;
+    }
+
+    public void setHora(Integer hora) {
+        this.hora = hora;
+    }
+
+    public Integer getMinuto() {
+        return minuto;
+    }
+
+    public void setMinuto(Integer minuto) {
+        this.minuto = minuto;
+    }
+
+    public Integer getSegundo() {
+        return segundo;
+    }
+
+    public void setSegundo(Integer segundo) {
+        this.segundo = segundo;
+    }
+
+    public void atualizar() {
+        LocalTime horaAtual = LocalTime.now();
+
+        Integer hora = Integer.valueOf(horaAtual.getHour());
+        Integer minuto = Integer.valueOf(horaAtual.getMinute());
+        Integer segundo = Integer.valueOf(horaAtual.getSecond());
+
+        this.setHora(hora);
+        this.setMinuto(minuto);
+        this.setSegundo(segundo);
+    }
+
     public void ajustar(Integer hora, Integer minuto, Integer segundo) {
         boolean horarioCorreto = hora>=0 &&
                 hora<=23 &&
