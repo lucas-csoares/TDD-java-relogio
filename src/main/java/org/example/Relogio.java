@@ -35,13 +35,9 @@ public class Relogio {
     public void atualizar() {
         LocalTime horaAtual = LocalTime.now();
 
-        Integer hora = Integer.valueOf(horaAtual.getHour());
-        Integer minuto = Integer.valueOf(horaAtual.getMinute());
-        Integer segundo = Integer.valueOf(horaAtual.getSecond());
-
-        this.setHora(hora);
-        this.setMinuto(minuto);
-        this.setSegundo(segundo);
+        this.setHora(Integer.valueOf(horaAtual.getHour()););
+        this.setMinuto(Integer.valueOf(horaAtual.getMinute()));
+        this.setSegundo(Integer.valueOf(horaAtual.getSecond()));
     }
 
     public void ajustar(Integer hora, Integer minuto, Integer segundo) {
