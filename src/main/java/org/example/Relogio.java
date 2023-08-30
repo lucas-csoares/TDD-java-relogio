@@ -33,6 +33,13 @@ public class Relogio {
     }
 
 
+    public void reiniciar() {
+        this.setHora(0);
+        this.setMinuto(0);
+        this.setSegundo(0);
+    }
+
+
     public String formato24H() {
         return String.format("%02d:%02d:%02d",this.getHora(),this.getMinuto(),this.getSegundo());
     }
