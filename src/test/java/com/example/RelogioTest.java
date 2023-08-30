@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 
 public class RelogioTest {
@@ -37,6 +38,18 @@ public class RelogioTest {
         assertEquals(Integer.valueOf(LocalTime.now().getMinute()), relogio.getMinuto());
         assertEquals(Integer.valueOf(LocalTime.now().getSecond()), relogio.getSegundo());
     }
+
+
+    @Test
+    @DisplayName("Validar o método formato formato24H")
+    public void testFormato24H() {
+        Relogio relogio = new Relogio();
+        LocalTime horaAtual = LocalTime.now();
+        DateTimeFormatter formatoEsperado = DateTimeFormatter.ofPattern("HH:mm:ss");
+        relogio.atualizar();
+        assertEquals(horaAtual.format(formatoEsperado),relogio.formato24H());
+    }
+
 
 
 
