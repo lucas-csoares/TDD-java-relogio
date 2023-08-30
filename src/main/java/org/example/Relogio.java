@@ -4,7 +4,9 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Relogio {
-
+    private Integer hora;
+    private Integer minuto;
+    private Integer segundo;
     public String difTime(String horario1, String horario2) {
         LocalTime localTime1, localTime2;
         localTime1 = stringParaLocalTime(horario1);
