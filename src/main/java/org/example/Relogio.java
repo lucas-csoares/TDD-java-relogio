@@ -9,12 +9,19 @@ public class Relogio {
     private Integer segundo;
 
     public void ajustar(Integer hora, Integer minuto, Integer segundo) {
-        if(hora>=0 && hora<=23 && minuto>=0 && minuto<=59 && segundo>=0 && segundo<=59) {
+        boolean horarioCorreto = hora>=0 &&
+                hora<=23 &&
+                minuto>=0 &&
+                minuto<=59 &&
+                segundo>=0 &&
+                segundo<=59;
+
+        if(horarioCorreto) {
             this.hora = hora;
             this.minuto = minuto;
             this.segundo = segundo;
         } else
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor inválido para horário");
     }
     public String difTime(String horario1, String horario2) {
         LocalTime localTime1, localTime2;
