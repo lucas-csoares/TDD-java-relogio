@@ -34,7 +34,6 @@ public class Relogio {
 
 
     public String formato24H() {
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm:ss");
         return String.format("%02d:%02d:%02d",this.getHora(),this.getMinuto(),this.getSegundo());
     }
 
